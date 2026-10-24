@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id "io.canvasmc.weaver.userdev" version "2.4.5"
+}
+
+group = 'com.unfamoussoul'
+version = "${version}"
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+
+    maven { url = "https://maven.canvasmc.io/releases" }
+    maven {
+        url = "https://maven.canvasmc.io/snapshots"
+        mavenContent { snapshotsOnly() }
+    }
+}
+
+dependencies {
+    paperweight.canvasDevBundle("${canvas_version}")
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+jar {
+    archiveFileName = 'Schat.jar'
+}
