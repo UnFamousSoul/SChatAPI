@@ -27,11 +27,11 @@ public final class SChatAPI {
      * @param pseudoPlayer псевдо-игроки, которые регистрируется как игроки
      * @throws NotUniquePseudoPlayerNameException если псевдо-игрок под таким ником уже зарегистрирован
      */
-    public native void registerPseudoPlayer(@NotNull PseudoPlayer... pseudoPlayer) throws NotUniquePseudoPlayerNameException;
+    public native void registerPseudoPlayer(PseudoPlayer @NotNull ... pseudoPlayer) throws NotUniquePseudoPlayerNameException;
 
     /**
      * Убрать Псевдо-игрока в список игроков.
      * @param pseudoPlayer псевдо-игроки, которые были зарегистрированы как игроки
      */
-    public native void unregisterPseudoPlayer(@NotNull PseudoPlayer... pseudoPlayer);
+    public native void unregisterPseudoPlayer(PseudoPlayer @NotNull ... pseudoPlayer);
 }
