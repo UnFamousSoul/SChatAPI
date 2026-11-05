@@ -30,11 +30,11 @@ public class PseudoPlayerPrivateMessageEvent extends Event {
         return HANDLER_LIST;
     }
 
-    public PseudoPlayer getPseudoPlayer() {
+    public @NotNull PseudoPlayer getPseudoPlayer() {
         return pseudoPlayer;
     }
 
-    public Player getSender() {
+    public @NotNull Player getSender() {
         return sender;
     }
 
