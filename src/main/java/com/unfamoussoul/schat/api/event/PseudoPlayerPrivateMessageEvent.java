@@ -7,6 +7,15 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Вызывается, если псевдо-игроку написали в личные сообщения.
+ * <pre><code>
+ * {@code @EventHandler}
+ * public void onPseudoMessage(PseudoPlayerPrivateMessageEvent event) {
+ *     event.reply("Привет, " + event.getSender().getName() + "!");
+ * }
+ * </code></pre>
+ */
 @SuppressWarnings("unused")
 public class PseudoPlayerPrivateMessageEvent extends Event {
 
@@ -30,14 +39,26 @@ public class PseudoPlayerPrivateMessageEvent extends Event {
         return HANDLER_LIST;
     }
 
+    /**
+     * @return какому из псевдо-игроков отправили личное сообщение
+     */
     public @NotNull PseudoPlayer getPseudoPlayer() {
         return pseudoPlayer;
     }
 
+    /**
+     * @return отправивший личные сообщения.
+     */
     public @NotNull Player getSender() {
         return sender;
     }
 
+    // TODO: сделать возможность отправлять несколько сообщений с задержкой между ними
+    /**
+     * При получении личного сообщения от игрока к псевдо-игроку с помощью этого метода можно
+     * написать в ответ одно и только одно сообщение.
+     * @param message сообщение псевдо-игрока.
+     */
     public void reply(@NotNull String message) {
         this.message = message;
     }
