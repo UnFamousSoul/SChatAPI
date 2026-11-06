@@ -25,6 +25,7 @@ public class PseudoPlayerPrivateMessageEvent extends Event {
     private String message;
 
     public PseudoPlayerPrivateMessageEvent(@NotNull Player sender, @NotNull PseudoPlayer pseudoPlayer) {
+        super(true);
         this.sender = sender;
         this.pseudoPlayer = pseudoPlayer;
         this.message = null;
