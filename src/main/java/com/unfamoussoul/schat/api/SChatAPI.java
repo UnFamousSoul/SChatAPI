@@ -1,6 +1,7 @@
 package com.unfamoussoul.schat.api;
 
 import com.unfamoussoul.schat.api.exception.NotUniquePseudoPlayerNameException;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("unused")
@@ -34,4 +35,13 @@ public final class SChatAPI {
      * @param pseudoPlayer псевдо-игроки, которые были зарегистрированы как игроки
      */
     public native void unregisterPseudoPlayer(PseudoPlayer @NotNull ... pseudoPlayer);
+
+    /**
+     * Отправить личное сообщение от лица псевдо-игрока указанному игроку.
+     *
+     * @param pseudoPlayer псевдо-игрок, от лица которого отправляется сообщение
+     * @param target       получатель, игрок
+     * @param message      текст сообщения
+     */
+    public native void sendPrivateMessage(@NotNull PseudoPlayer pseudoPlayer, @NotNull Player target, @NotNull String message);
 }
