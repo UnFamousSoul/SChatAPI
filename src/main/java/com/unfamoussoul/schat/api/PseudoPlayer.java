@@ -10,6 +10,7 @@ public class PseudoPlayer {
 
     private String name;
     private Location location;
+    private boolean allowMiniMessage;
 
     public String getName() {
         return name;
@@ -25,5 +26,13 @@ public class PseudoPlayer {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public boolean isAllowMiniMessage() {
+        return allowMiniMessage;
+    }
+
+    public void setAllowMiniMessage(boolean allowMiniMessage) {
+        this.allowMiniMessage = allowMiniMessage;
     }
 }
